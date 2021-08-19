@@ -2,7 +2,7 @@
   <v-card>
     <div class="text-center">
       <v-progress-circular
-          v-if="value"
+          v-if="typeof value === 'number' && isFinite(value)"
           :rotate="-90"
           :size="100"
           :width="15"
@@ -12,13 +12,7 @@
         {{ value }}
       </v-progress-circular>
 
-      <div v-if="avg_strength" style="
-    position: relative;
-    display: inline-flex;
-    vertical-align: middle;
-    justify-content: center;
-    align-items: center;
-margin: 1rem;">
+      <div v-if="avg_strength" class="avgStrength">
         <v-img
             height="100"
             max-width="100"
@@ -47,7 +41,7 @@ export default {
     title: String,
     value: {
       type: Number,
-      default: 0,
+      default: null,
     },
     avg_strength: String,
   },
@@ -71,5 +65,14 @@ export default {
 
 .circular__description {
   word-break: normal;
+}
+
+.avgStrength {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
 }
 </style>

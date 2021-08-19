@@ -41,13 +41,21 @@
         <v-btn
             color="#920052"
             text
+            @click="deleteEntry"
+        >
+          Delete
+        </v-btn>
+        <v-btn
+            color="#920052"
+            text
             @click="$emit('change',false)"
         >
           Close
         </v-btn>
         <v-btn
-            color="#920052"
-            text
+            color="#DF007D"
+            class="white--text"
+            depressed
             @click="save"
         >
           Save
@@ -85,6 +93,10 @@ export default {
   methods: {
     save() {
       this.$emit('save', {...this.day});
+      this.$emit('change', false);
+    },
+    deleteEntry() {
+      this.$emit('delete', this.day.date);
       this.$emit('change', false);
     }
   },

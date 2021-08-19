@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
+import './registerServiceWorker'
+import reactiveStorage from "vue-reactive-storage";
+
+Vue.use(reactiveStorage, {
+  data: [],
+});
 
 Vue.config.productionTip = false
 

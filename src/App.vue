@@ -23,6 +23,9 @@
             <v-tab>
               Calendar
             </v-tab>
+            <v-tab>
+              Login
+            </v-tab>
           </v-tabs>
         </template>
       </v-toolbar>
@@ -81,6 +84,9 @@
               @click:date="startEdit"
           ></v-date-picker>
         </v-tab-item>
+        <v-tab-item>
+          <Login/>
+        </v-tab-item>
       </v-tabs-items>
       <v-footer padless>
         <v-col
@@ -108,6 +114,7 @@
 import Tile from './components/Tile';
 import Overlay from './components/Overlay';
 import RoundButton from './components/RoundButton';
+import Login from './components/Login';
 
 function getDayDifference(first, second) {
   return Math.round((new Date(second) - new Date(first)) / (1000 * 60 * 60 * 24));
@@ -130,7 +137,9 @@ export default {
     RoundButton,
     Overlay,
     Tile,
+    Login,
   },
+
 
   computed: {
     dates() {

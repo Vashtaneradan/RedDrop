@@ -3,6 +3,10 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import './registerServiceWorker'
 import reactiveStorage from "vue-reactive-storage";
+// import { firestorePlugin } from 'vuefire'
+//
+//
+// Vue.use(firestorePlugin)
 
 Vue.use(reactiveStorage, {
   data: [],
